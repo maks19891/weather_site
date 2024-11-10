@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода Open Weather Map</title>
+    <!-- <link rel="icon" href="favicon.png" type="image/x-icon"> -->
+    <link rel="icon" href="favicon2.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Satisfy&family=Tilt+Prism&family=Work+Sans:ital@0;1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Weather in </h1>
+        <div class="custom-city">
+            <input id="custom-city-input" type="text" placeholder="Введите город">
+            <button id="custom-city-search" onclick="getCustomWeather()">
+                <span class="material-symbols-outlined">travel_explore</span>
+            </button>
+        </div>
+        <div id="recent-cities"></div>
+    </div>
+    
+
+    <div class="wrapper">
+        <div class="mainContent">
+
+            <div class="city-buttons-block">
+                <div class="city-buttons">
+                    <button onclick="updateWeather('Севастополь')">Севастополь</button>
+                    <button onclick="updateWeather('Нью-Йорк')">Нью-Йорк</button>
+                    <button onclick="updateWeather('Токио')">Токио</button>
+                    <button onclick="updateWeather('Киев')">Киев</button>
+                    <button onclick="updateWeather('Сидней')">Сидней</button>
+                </div>
+                
+                <div id="recent-cities-list"></div>
+            </div>
+
+            <div class="current-weather-block">
+                <div class="current-weather">
+                    <div id="city-name" class="city-name"></div>
+                    <div id="country-flag" title="Flag"></div>
+                    <div id="utc-time"></div>
+                    <div id="temperature"></div>
+                    <div id="feels-like"></div>
+                    <div id="weather-description"></div>
+                    <div id="weather-icon"></div>
+                    <div id="wind-speed"></div>
+                    <div id="humidity"></div>
+                    <div id="pressure"></div>
+                    <div id="sunrise"></div>
+                    <div id="sunset"></div>
+                </div>
+            </div>
+
+            <!-- Содержимое, которое будет показываться/скрываться -->
+            <!-- <button id="toggleButton">Прогноз погоды на 5 дней</button> -->
+            <!-- <div id="fiveDaysWeather" style="display: none;"> -->
+            <div class="forecast">
+                <div class="forecastWeather">
+                    <h2 class="forecastWeatherTitle">Прогноз погоды на 5 дней</h2>
+                    <div class="forecastDays">
+                        <div id="day1" class="dayCard"></div>
+                        <div id="day2" class="dayCard"></div>
+                        <div id="day3" class="dayCard"></div>
+                        <div id="day4" class="dayCard"></div>
+                        <div id="day5" class="dayCard"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/country-flags-svg@1.1.3/dist/countryFlags.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
